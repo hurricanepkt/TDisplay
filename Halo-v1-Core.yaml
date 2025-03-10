@@ -159,11 +159,6 @@ button:
   - platform: restart
     icon: mdi:power-cycle
     name: "ESP Reboot"
-
-  - platform: factory_reset
-    disabled_by_default: True
-    name: "Factory Reset ESP"
-    id: factory_reset_all
 light:
   - platform: monochromatic
     output: backlight
