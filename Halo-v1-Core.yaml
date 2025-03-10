@@ -78,10 +78,7 @@ select:
           id: temp_unit_changed
           value: "true"
 
-interval:
-  - interval: 1s
-    then:
-      - script.execute: time_update         
+# interval:  
 
 api:
 
