@@ -281,8 +281,17 @@ light:
     name: "Display Backlight"
     restore_mode: ALWAYS_ON
 
-lgvl:
-  - widgets:
-    - label:
-        align: CENTER
-        text: 'Hello World'
+lvgl:
+  displays:
+    - lily_display
+  touchscreens:
+    - lily_touch
+  buffer_size: 100%
+  pages:            
+    - id: main_page
+      bg_color: my_black
+      scrollbar_mode: "OFF"
+      widgets:
+        - label:
+            align: CENTER
+            text: 'Hello World'
