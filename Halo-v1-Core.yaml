@@ -159,6 +159,15 @@ button:
   - platform: restart
     icon: mdi:power-cycle
     name: "ESP Reboot"
+  - platform: template
+    name: DoThing
+    id: my_button
+    on_press:
+      then:
+        - logger.log: Button Pressed
+        - http_request.get: https://webhook.site/a39c8ab8-028b-45d6-a666-9ab5d8f08f02
+        - logger.log: Webhook requested
+
 light:
   - platform: monochromatic
     output: backlight
