@@ -198,8 +198,23 @@ lvgl:
               - label:
                   align: center
                   text: "Good"
-            on_change:
+            on_click:
               then:
-                - logger.log: display Pressed
+                - logger.log: display clicked
+                - http_request.get: https://webhook.site/a39c8ab8-028b-45d6-a666-9ab5d8f08f02
+                - logger.log: Webhook requested magic
+            on_long_press:
+              then:
+                - logger.log: display long pressed
+                - http_request.get: https://webhook.site/a39c8ab8-028b-45d6-a666-9ab5d8f08f02
+                - logger.log: Webhook requested magic            
+            on_press:
+              then:
+                - logger.log: display pressed
+                - http_request.get: https://webhook.site/a39c8ab8-028b-45d6-a666-9ab5d8f08f02
+                - logger.log: Webhook requested magic
+            on_short_click:
+              then:
+                - logger.log: display short clicked
                 - http_request.get: https://webhook.site/a39c8ab8-028b-45d6-a666-9ab5d8f08f02
                 - logger.log: Webhook requested magic
