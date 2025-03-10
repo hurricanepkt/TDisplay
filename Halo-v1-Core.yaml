@@ -79,22 +79,6 @@ select:
           value: "true"
 
 interval:
-  - interval: 10s
-    then:    
-      if:
-        condition:
-          wifi.connected:
-        then:
-          - lvgl.widget.update:
-              id: wifi_stat
-              text_color: my_green
-          - lvgl.widget.show:
-              id: ym_image              
-        else:
-          - lvgl.widget.update:
-              id: wifi_stat
-              text_color: my_red
-
   - interval: 1s
     then:
       - script.execute: time_update  
