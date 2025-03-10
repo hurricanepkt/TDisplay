@@ -48,6 +48,7 @@ globals:
 
 api:
 
+http_request:
 
 i2c:
   - sda: 9
