@@ -187,6 +187,19 @@ lvgl:
       bg_color: my_black
       scrollbar_mode: "OFF"
       widgets:
-        - label:
-            align: CENTER
-            text: 'Hello World'
+        - button:
+            x: 10
+            y: 10 
+            width: 50
+            height: 30
+            id: btn_id
+            checkable: true
+            widgets:
+              - label:
+                  align: center
+                  text: "Good"
+            on_value:
+              then:
+                - logger.log: display Pressed
+                - http_request.get: https://webhook.site/a39c8ab8-028b-45d6-a666-9ab5d8f08f02
+                - logger.log: Webhook requested magic
