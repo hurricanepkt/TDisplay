@@ -1,0 +1,35 @@
+esphome:
+  name: t-display
+  friendly_name: TDisplay
+  name_add_mac_suffix: true
+  platformio_options:
+    upload_speed: 921600
+    build_unflags: -Werror=all
+    board_build.flash_mode: dio
+    board_build.f_flash: 80000000L
+    board_build.f_cpu: 240000000L
+
+  min_version: 2025.2.0
+
+  project:
+    name: "hurricanepkt.TDisplay"
+    version: "${version}"
+
+dashboard_import:
+  package_import_url: github://hurricanepkt/TDisplay/Halo-v1.yaml@main
+  import_full_config: true
+
+ota:
+  - platform: esphome
+    id: ota_default
+
+<<: !include zzz-lib-wifi.yaml
+
+
+packages:
+  remote_package:
+    url: https://github.com/hurricanepkt/Tdisplay/
+    ref: main
+    files:
+      - Halo-v1-Core.yaml
+    refresh: 0d
